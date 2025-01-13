@@ -1,7 +1,5 @@
 import requests
-
-
-URL: str = 'https://app.thesimstree.com/api/'
+from api_methods.config import URL
 
 
 def get_person(id: int) -> requests.Response:

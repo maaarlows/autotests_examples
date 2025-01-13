@@ -1,1 +1,1 @@
-from . import get
+from . import get, post, delete
