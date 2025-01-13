@@ -1,0 +1,1 @@
+URL: str = 'https://app.thesimstree.com/api/'

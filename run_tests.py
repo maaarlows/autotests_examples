@@ -1,7 +1,7 @@
 import os
 import time
 
-TESTS_PATH = os.path.join('tests', 'tests.py')
+TESTS_PATH = os.path.join('tests', 'get_person_tests.py')
 ALLURE_RESULTS = os.path.join('allure-results')
 
 timestr = time.strftime('%Y%m%d-%H%M%S')
