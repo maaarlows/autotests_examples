@@ -2,7 +2,7 @@ import os
 import time
 import argparse
 
-TESTS_PATH = os.path.join('tests')
+TESTS_PATH = os.path.join('api_tests')
 ALLURE_RESULTS = os.path.join('allure-results')
 
 test_config = {
@@ -30,12 +30,12 @@ allure_results_path = f'{ALLURE_RESULTS}_{timestr}'
 argument_parser = argparse.ArgumentParser(prog='run_tests')
 argument_parser.add_argument(
     '--regress',
-    help='regression tests',
+    help='regression api_tests',
     action='store_true'
 )
 argument_parser.add_argument(
     '--smoke',
-    help='smoke tests',
+    help='smoke api_tests',
     action='store_true'
 )
 
