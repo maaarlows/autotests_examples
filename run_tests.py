@@ -7,12 +7,12 @@ ALLURE_RESULTS = os.path.join('allure-results')
 
 test_config = {
     'regress': [
-        os.path.join(TESTS_PATH, 'get_person_tests.py'),
-        os.path.join(TESTS_PATH, 'create_person_tests.py'),
-        os.path.join(TESTS_PATH, 'delete_person_tests.py'),
+        os.path.join(TESTS_PATH, 'get_person_test.py'),
+        os.path.join(TESTS_PATH, 'create_person_test.py'),
+        os.path.join(TESTS_PATH, 'delete_person_test.py'),
     ],
     'smoke': [
-        os.path.join(TESTS_PATH, 'get_person_tests.py')
+        os.path.join(TESTS_PATH, 'get_person_test.py')
     ]
 }
 
