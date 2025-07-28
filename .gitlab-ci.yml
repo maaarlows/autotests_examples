@@ -1,0 +1,16 @@
+stages:
+  - test
+
+pytest_manual:
+  stage: test
+  image: python:3.10
+  before_script:
+    - pip install -r requirements.txt
+  script:
+    - pytest --junitxml=report.xml
+  when: manual
+  allow_failure: false
+  artifacts:
+    when: always
+    reports:
+      junit: report.xml
