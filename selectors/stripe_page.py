@@ -1,0 +1,6 @@
+CARD_NUMBER = "input[name='cardNumber']"
+CARD_DATE = "input[name='cardExpiry']"
+CARD_CODE = "input[name='cardCvc']"
+CARD_NAME = "input[name='billingName']"
+SUBMIT_STRIPE = "div.SubmitButton-IconContainer"
+ERR = "#cardForm-fieldset > div.FormFieldGroup-container > div.FieldError-container"

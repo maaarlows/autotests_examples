@@ -1,0 +1,6 @@
+ADD_BUTTON = '#kt_app_content_container > div > div.card-header.border-0.pt-6 > div.card-toolbar.d-flex.gap-5 > div.d-flex.justify-content-end > button'
+ADD_SIM_HEADER = '#kt_help_header'
+FIRST_NAME_INPUT = '#kt_help_body > div:nth-child(3) > input'
+LAST_NAME_INPUT = '#kt_help_body > div:nth-child(4) > input'
+SAVE_BUTTON = '#kt_activities_footer >> button.btn-success >> nth=1'
+PERSONS = '#kt_app_content_container > div > div.card-body.py-4 > div > div > table > tbody'

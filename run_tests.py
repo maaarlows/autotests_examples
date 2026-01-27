@@ -2,17 +2,18 @@ import os
 import time
 import argparse
 
-TESTS_PATH = os.path.join('api_tests')
+API_TESTS = os.path.join('api_tests'),
+E2E_TESTS = os.path.join('e2e_tests')
 ALLURE_RESULTS = os.path.join('allure-results')
 
 test_config = {
     'regress': [
-        os.path.join(TESTS_PATH, 'get_person_test.py'),
-        os.path.join(TESTS_PATH, 'create_person_test.py'),
-        os.path.join(TESTS_PATH, 'delete_person_test.py'),
+        os.path.join(API_TESTS, 'get_person_test.py'),
+        os.path.join(API_TESTS, 'create_person_test.py'),
+        os.path.join(API_TESTS, 'delete_person_test.py'),
     ],
     'smoke': [
-        os.path.join(TESTS_PATH, 'get_person_test.py')
+        os.path.join(API_TESTS, 'get_person_test.py')
     ]
 }
 
