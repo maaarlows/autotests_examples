@@ -14,7 +14,7 @@ from selectors.my_sims_page import ADD_BUTTON, ADD_SIM_HEADER, FIRST_NAME_INPUT,
 @allure.severity(allure.severity_level.CRITICAL)
 def test_successful_sim_creation(page, name_generator):
     with allure.step('auth user'):
-        page.goto("https://test-frontend.thesimstree.com/auth")
+        page.goto("https://thesimstree.com/auth")
         page.fill(LOGIN_EMAIL, test_email)
         page.fill(LOGIN_PASSWORD, test_password)
         page.click(SUBMIT_BUTTON)

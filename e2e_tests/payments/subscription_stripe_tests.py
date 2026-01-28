@@ -13,7 +13,7 @@ from selectors.stripe_page import CARD_NUMBER, CARD_DATE, CARD_NAME, CARD_CODE, 
 @allure.severity(allure.severity_level.CRITICAL)
 def test_successful_stripe_payment(page):
     with allure.step('auth user'):
-        page.goto("https://test-frontend.thesimstree.com/auth")
+        page.goto("https://thesimstree.com/auth")
         page.fill(LOGIN_EMAIL, test_email)
         page.fill(LOGIN_PASSWORD, test_password)
         page.click(SUBMIT_BUTTON)
@@ -34,7 +34,7 @@ def test_successful_stripe_payment(page):
     with allure.step('submit stripe payment'):
         page.click(SUBMIT_STRIPE)
     with allure.step("return to the sims tree"):
-        page.wait_for_url("https://test-frontend.thesimstree.com/crafted/pages/dynasty/**")
+        page.wait_for_url("https://thesimstree.com/crafted/pages/dynasty/**")
         assert page.locator(TRY_PRO_BUTTON).count() == 0
     with allure.step('check pro status in database'):
         wait_until_user_is_pro(email=test_email)
@@ -46,7 +46,7 @@ def test_successful_stripe_payment(page):
 @allure.severity(allure.severity_level.CRITICAL)
 def test_failed_stripe_payment(page):
     with allure.step('auth user'):
-        page.goto("https://test-frontend.thesimstree.com/auth")
+        page.goto("https://thesimstree.com/auth")
         page.fill(LOGIN_EMAIL, test_email)
         page.fill(LOGIN_PASSWORD, test_password)
         page.click(SUBMIT_BUTTON)
@@ -68,6 +68,6 @@ def test_failed_stripe_payment(page):
         page.click(SUBMIT_STRIPE)
         page.wait_for_selector(ERR)
     with allure.step("return to the sims tree"):
-        page.goto("https://test-frontend.thesimstree.com/")
+        page.goto("https://thesimstree.com/")
         page.wait_for_selector(TRY_PRO_BUTTON)
         assert page.locator(TRY_PRO_BUTTON).count() == 1
