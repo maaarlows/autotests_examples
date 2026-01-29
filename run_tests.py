@@ -2,18 +2,12 @@ import os
 import time
 import argparse
 
-API_TESTS = os.path.join('api_tests'),
-E2E_TESTS = os.path.join('e2e_tests')
+E2E_TESTS = os.path.join('e2e_tests'),
 ALLURE_RESULTS = os.path.join('allure-results')
 
 test_config = {
-    'regress': [
-        os.path.join(API_TESTS, 'get_person_test.py'),
-        os.path.join(API_TESTS, 'create_person_test.py'),
-        os.path.join(API_TESTS, 'delete_person_test.py'),
-    ],
-    'smoke': [
-        os.path.join(API_TESTS, 'get_person_test.py')
+    'e2e': [
+        os.path.join(E2E_TESTS, 'subscription_stripe_tests.py')
     ]
 }
 
@@ -30,20 +24,15 @@ allure_results_path = f'{ALLURE_RESULTS}_{timestr}'
 
 argument_parser = argparse.ArgumentParser(prog='run_tests')
 argument_parser.add_argument(
-    '--regress',
-    help='regression api_tests',
-    action='store_true'
-)
-argument_parser.add_argument(
-    '--smoke',
-    help='smoke api_tests',
+    '--e2e',
+    help='e2e tests',
     action='store_true'
 )
 
 arguments = argument_parser.parse_args()
-if arguments.regress:
-    os.system(f'python -m pytest {collect_tests(test_config['regress'])} --alluredir {allure_results_path}')
-elif arguments.smoke:
-    os.system(f'python -m pytest {collect_tests(test_config['smoke'])} --alluredir {allure_results_path}')
+if arguments.e2e:
+    os.system(f'python -m pytest {collect_tests(test_config['e2e'])} --alluredir {allure_results_path}')
+#elif arguments.smoke:
+    #os.system(f'python -m pytest {collect_tests(test_config['smoke'])} --alluredir {allure_results_path}')
 
 os.system(f'allure serve {allure_results_path}')
