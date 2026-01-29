@@ -1,0 +1,16 @@
+stages:
+  - test
+
+api_tests:
+  stage: test
+  image: python:latest
+  before_script:
+    - pip install -r requirements.txt
+  script:
+    - pytest api_tests/ --junitxml=api-report.xml
+  when: manual
+  allow_failure: false
+  artifacts:
+    when: always
+    reports:
+      junit: api-report.xml

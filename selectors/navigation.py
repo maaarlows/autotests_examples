@@ -1,0 +1,1 @@
+MY_SIMS_BUTTON = '#\#kt_app_sidebar_menu > div:nth-child(2) > a'
