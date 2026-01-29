@@ -1,1 +1,1 @@
-# autotests_examples
+# autotests

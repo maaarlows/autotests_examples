@@ -1,1 +1,8 @@
 JWT = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MjEyMDkyLCJyb2xlIjowLCJlbWFpbCI6InRlc3RAdGVzdC5ydSJ9.vRY0paP3xjHbvNGTxwM-D2PqgPUHty2U3xmOKZxkOoY'
+test_email = 'test@test.com'
+test_password = 'qwerty12345'
+test_number = '4242 4242 4242 4242'
+test_name = 'Test Test'
+test_code = '111'
+test_date = '0929'
+err_number = '4000 0000 0000 9995'
