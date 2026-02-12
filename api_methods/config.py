@@ -1,1 +1,5 @@
-URL: str = 'https://app.thesimstree.com/api/'
+url_auth = 'https://test-frontend.thesimstree.com/auth'
+url_main_page = 'https://test-frontend.thesimstree.com/'
+url_dynasty = 'https://thesimstree.com/crafted/pages/dynasty/tree'
+url_stripe = 'https://checkout.stripe.com/c/pay/**'
+url_adminer = 'https://test-frontend.thesimstree.com/adminer.php?username=sim&db=sims_test'
