@@ -1,0 +1,6 @@
+LOGIN_PASSWORD = '#content > form > table > tbody > tr:nth-child(4) > td > input[type=password]'
+LOGIN_BUTTON = '#content > form > p > input[type=submit]'
+COMMAND_BUTTON = '#menu > p > a:nth-child(1)'
+TEXT_FIELD = '#form > p:nth-child(1) > pre'
+EXECUTE_BUTTON = '#form > p:nth-child(2) > input[type=submit]:nth-child(1)'
+TABLE = '#content > div.scrollable'
