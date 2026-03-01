@@ -3,11 +3,9 @@ stages:
 
 e2e_tests_payments:
   stage: test
-  image: python:3.11
+  image: mcr.microsoft.com/playwright/python:v1.42.0-jammy
   before_script:
-    - python -m pip install --upgrade pip
     - pip install -r requirements.txt
-    - playwright install --with-deps
   script:
     - pytest e2e_tests/payments --junitxml=e2e-report.xml
   when: manual
@@ -19,11 +17,9 @@ e2e_tests_payments:
 
 e2e_tests_my_sims_page:
   stage: test
-  image: python:3.11
+  image: mcr.microsoft.com/playwright/python:v1.42.0-jammy
   before_script:
-    - python -m pip install --upgrade pip
     - pip install -r requirements.txt
-    - playwright install --with-deps
   script:
     - pytest e2e_tests/my_sims_page --junitxml=e2e-report.xml
   when: manual
