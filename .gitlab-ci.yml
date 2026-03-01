@@ -3,14 +3,15 @@ stages:
 
 api_tests:
   stage: test
-  image: python:latest
+  image: python:3.11
   before_script:
+    - python -m pip install --upgrade pip
     - pip install -r requirements.txt
   script:
-    - pytest api_tests/ --junitxml=api-report.xml
+    - pytest e2e_tests/ --junitxml=api-report.xml
   when: manual
   allow_failure: false
   artifacts:
     when: always
     reports:
-      junit: api-report.xml
+      junit: e2e-report.xml
