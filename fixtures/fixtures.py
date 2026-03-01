@@ -2,7 +2,7 @@ import pytest
 import random
 import string
 
-from selectors.auth_page import LANG_BUTTON, ENG_LOCATOR, RU_LOCATOR
+from ui_selectors.auth_page import LANG_BUTTON, ENG_LOCATOR, RU_LOCATOR
 
 
 @pytest.fixture

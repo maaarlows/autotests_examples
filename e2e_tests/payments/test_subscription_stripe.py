@@ -6,8 +6,8 @@ from fixtures.fixtures import ensure_english_ui
 from api_methods.config import url_auth, url_stripe, url_main_page
 
 from api_methods.jwt import test_email, test_password, test_number, test_name, test_code, test_date, err_number
-from selectors.auth_page import LOGIN_EMAIL, LOGIN_PASSWORD, SUBMIT_BUTTON, TRY_PRO_BUTTON, TO_BUY, PLANS
-from selectors.stripe_page import CARD_NUMBER, CARD_DATE, CARD_NAME, CARD_CODE, SUBMIT_STRIPE, ERR
+from ui_selectors.auth_page import LOGIN_EMAIL, LOGIN_PASSWORD, SUBMIT_BUTTON, TRY_PRO_BUTTON, TO_BUY, PLANS
+from ui_selectors.stripe_page import CARD_NUMBER, CARD_DATE, CARD_NAME, CARD_CODE, SUBMIT_STRIPE, ERR
 
 
 @allure.title('Successful stripe payment')

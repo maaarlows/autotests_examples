@@ -6,8 +6,8 @@ from fixtures.fixtures import ensure_russian_ui
 from api_methods.config import url_auth, url_tbank, url_main_page
 
 from api_methods.jwt import test_email, test_password, test_number_tbank, test_code_tbank, test_date_tbank, err_number_tbank
-from selectors.auth_page import LOGIN_EMAIL, LOGIN_PASSWORD, SUBMIT_BUTTON, TRY_PRO_BUTTON, TO_BUY, PLANS
-from selectors.tbank_page import CARD_NUMBER, CARD_DATE, CARD_CODE, SUBMIT_TBANK, ERR, SAVE_CARD
+from ui_selectors.auth_page import LOGIN_EMAIL, LOGIN_PASSWORD, SUBMIT_BUTTON, TRY_PRO_BUTTON, TO_BUY, PLANS
+from ui_selectors.tbank_page import CARD_NUMBER, CARD_DATE, CARD_CODE, SUBMIT_TBANK, ERR, SAVE_CARD
 
 
 @allure.title('Successful tbank payment')
