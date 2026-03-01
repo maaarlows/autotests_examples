@@ -2,7 +2,7 @@ import pytest
 import random
 import string
 
-from selectors.auth_page import LANG_BUTTON, ENG_LOCATOR
+from selectors.auth_page import LANG_BUTTON, ENG_LOCATOR, RU_LOCATOR
 
 
 @pytest.fixture
@@ -22,4 +22,16 @@ def ensure_english_ui(page):
     page.click(LANG_BUTTON)
     page.click(ENG_LOCATOR)
     if is_english_ui(page):
+        return
+
+def is_russian_ui(page) -> bool:
+    text = page.locator(f"{LANG_BUTTON} span.text-muted").inner_text().strip()
+    return text.upper() == "RU"
+
+def ensure_russian_ui(page):
+    if is_russian_ui(page):
+        return
+    page.click(LANG_BUTTON)
+    page.click(RU_LOCATOR)
+    if is_russian_ui(page):
         return
