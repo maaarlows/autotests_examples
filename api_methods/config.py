@@ -1,5 +1,5 @@
 url_auth = 'https://test-frontend.thesimstree.com/auth'
-url_main_page = 'https://test-frontend.thesimstree.com/**'
+url_main_page = 'https://test-frontend.thesimstree.com/'
 url_dynasty = 'https://thesimstree.com/crafted/pages/dynasty/tree'
 url_stripe = 'https://checkout.stripe.com/c/pay/**'
 url_tbank = 'https://pay.tbank.ru/**'
