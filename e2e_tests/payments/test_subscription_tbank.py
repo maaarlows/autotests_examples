@@ -22,7 +22,7 @@ def test_successful_tbank_payment(page):
         page.click(SUBMIT_BUTTON)
         page.wait_for_load_state("domcontentloaded")
     with allure.step('switch lang to ru'):
-        page.wait_for_timeout(3000)
+        page.wait_for_url(url_main_page)
         ensure_russian_ui(page)
     with allure.step('open tbank checkout'):
         page.click(TRY_PRO_BUTTON)
@@ -59,7 +59,7 @@ def test_failed_tbank_payment(page):
         page.click(SUBMIT_BUTTON)
         page.wait_for_load_state("domcontentloaded")
     with allure.step('switch lang to ru'):
-        page.wait_for_timeout(3000)
+        page.wait_for_url(url_main_page)
         ensure_russian_ui(page)
     with allure.step('open tbank checkout'):
         page.click(TRY_PRO_BUTTON)
@@ -76,6 +76,7 @@ def test_failed_tbank_payment(page):
         page.click(SUBMIT_TBANK)
         page.wait_for_selector(ERR)
     with allure.step("return to the sims tree"):
+        page.wait_for_url(url_main_page)
         page.goto(url_main_page)
         page.wait_for_selector(TRY_PRO_BUTTON)
         assert page.locator(TRY_PRO_BUTTON).count() == 1
