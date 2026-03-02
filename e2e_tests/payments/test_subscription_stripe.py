@@ -27,7 +27,7 @@ def test_successful_stripe_payment(page):
         page.click(TRY_PRO_BUTTON)
         page.wait_for_selector(PLANS)
         page.click(TO_BUY)
-        page.wait_for_url(url_stripe)
+        page.wait_for_url(url_stripe, wait_until="load")
     with allure.step('fill stripe card data'):
         page.wait_for_selector(CARD_NUMBER)
         page.fill(CARD_NUMBER, test_number)
@@ -37,7 +37,7 @@ def test_successful_stripe_payment(page):
     with allure.step('submit stripe payment'):
         page.click(SUBMIT_STRIPE)
     with allure.step("return to the sims tree"):
-        page.wait_for_url(url_main_page, timeout=80000)
+        page.wait_for_url(url_main_page, wait_until="load")
         assert page.locator(TRY_PRO_BUTTON).count() == 0
     with allure.step('check pro status in database'):
         db_page = db_connect(page)
@@ -63,7 +63,7 @@ def test_failed_stripe_payment(page):
         page.click(TRY_PRO_BUTTON)
         page.wait_for_selector(PLANS)
         page.click(TO_BUY)
-        page.wait_for_url(url_stripe, timeout=80000)
+        page.wait_for_url(url_stripe, wait_until="load")
     with allure.step('fill stripe card data with incorrect card'):
         page.wait_for_selector(CARD_NUMBER)
         page.fill(CARD_NUMBER, err_number)
@@ -72,7 +72,7 @@ def test_failed_stripe_payment(page):
         page.fill(CARD_NAME, test_name)
     with allure.step('submit stripe payment'):
         page.click(SUBMIT_STRIPE)
-        page.wait_for_selector(ERR, timeout=60000)
+        page.wait_for_selector(ERR, wait_until="load")
     with allure.step("return to the sims tree"):
         page.goto(url_main_page, wait_until="load")
         page.wait_for_selector(TRY_PRO_BUTTON)
