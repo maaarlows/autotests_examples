@@ -13,6 +13,7 @@ def name_generator():
     return first_name, last_name
 
 def is_english_ui(page) -> bool:
+    page.locator(f"{LANG_BUTTON} span.text-muted").wait_for(state="visible", timeout=60000)
     text = page.locator(f"{LANG_BUTTON} span.text-muted").inner_text().strip()
     return text.upper() == "EN"
 
@@ -25,6 +26,7 @@ def ensure_english_ui(page):
         return
 
 def is_russian_ui(page) -> bool:
+    page.locator(f"{LANG_BUTTON} span.text-muted").wait_for(state="visible", timeout=60000)
     text = page.locator(f"{LANG_BUTTON} span.text-muted").inner_text().strip()
     return text.upper() == "RU"
 

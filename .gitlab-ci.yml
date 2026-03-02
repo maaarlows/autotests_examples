@@ -9,7 +9,7 @@ e2e_tests_payments:
     - pip install -r requirements.txt
     - playwright install --with-deps
   script:
-    - pytest e2e_tests/payments --slowmo 500 --junitxml=e2e-report.xml
+    - pytest e2e_tests/payments --junitxml=e2e-report.xml
   when: manual
   allow_failure: false
   artifacts:

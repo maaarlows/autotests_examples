@@ -72,7 +72,7 @@ def test_failed_stripe_payment(page):
         page.fill(CARD_NAME, test_name)
     with allure.step('submit stripe payment'):
         page.click(SUBMIT_STRIPE)
-        page.wait_for_selector(ERR, wait_until="load")
+        page.wait_for_selector(ERR)
     with allure.step("return to the sims tree"):
         page.goto(url_main_page, wait_until="load")
         page.wait_for_selector(TRY_PRO_BUTTON)
