@@ -3,16 +3,13 @@ stages:
 
 e2e_tests_payments:
   stage: test
-  image: python:3.11
-  variables:
-    PW_SLOW_MO: "500"
-    PW_HEADLESS: "1"
+  image: mcr.microsoft.com/playwright/python:v1.57.0-jammy
   before_script:
     - python -m pip install --upgrade pip
     - pip install -r requirements.txt
     - playwright install --with-deps
   script:
-    - pytest e2e_tests/payments --junitxml=e2e-report.xml
+    - pytest e2e_tests/payments --junitxml=e2e-report.xml --headed --slowmo 500
   when: manual
   allow_failure: false
   artifacts:
