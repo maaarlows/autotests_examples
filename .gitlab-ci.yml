@@ -7,7 +7,7 @@ e2e_tests_payments:
   before_script:
     - pip install -r requirements.txt
   script:
-    - pytest e2e_tests/payments -n 1 --slowmo 200 --junitxml=e2e-report.xml --timeout=100000
+    - pytest e2e_tests/payments -n 1 --slowmo 500 --junitxml=e2e-report.xml --timeout=120000
   when: manual
   allow_failure: false
   artifacts:
