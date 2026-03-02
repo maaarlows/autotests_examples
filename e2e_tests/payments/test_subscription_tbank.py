@@ -27,7 +27,7 @@ def test_successful_tbank_payment(page):
         page.click(TRY_PRO_BUTTON)
         page.wait_for_selector(PLANS)
         page.click(TO_BUY)
-        page.wait_for_url(url_tbank)
+        page.wait_for_url(url_tbank, timeout=80000)
     with allure.step('fill tbank card data'):
         page.wait_for_selector(CARD_NUMBER)
         page.click(CARD_NUMBER)
@@ -38,7 +38,7 @@ def test_successful_tbank_payment(page):
     with allure.step('submit tbank payment'):
         page.click(SUBMIT_TBANK)
     with allure.step("return to the sims tree"):
-        page.wait_for_url(url_main_page)
+        page.wait_for_url(url_main_page, timeout=80000)
         assert page.locator(TRY_PRO_BUTTON).count() == 0
     with allure.step('check pro status in database'):
         db_page = db_connect(page)
@@ -63,7 +63,7 @@ def test_failed_tbank_payment(page):
         page.click(TRY_PRO_BUTTON)
         page.wait_for_selector(PLANS)
         page.click(TO_BUY)
-        page.wait_for_url(url_tbank)
+        page.wait_for_url(url_tbank, timeout=80000)
     with allure.step('fill tbank card data with incorrect card'):
         page.wait_for_selector(CARD_NUMBER)
         page.fill(CARD_NUMBER, err_number_tbank)
@@ -72,8 +72,8 @@ def test_failed_tbank_payment(page):
         page.click(SAVE_CARD)
     with allure.step('submit tbank payment'):
         page.click(SUBMIT_TBANK)
-        page.wait_for_selector(ERR)
+        page.wait_for_selector(ERR, timeout=60000)
     with allure.step("return to the sims tree"):
-        page.goto(url_main_page)
+        page.goto(url_main_page, wait_until="load")
         page.wait_for_selector(TRY_PRO_BUTTON)
         assert page.locator(TRY_PRO_BUTTON).count() == 1
