@@ -3,11 +3,11 @@ stages:
 
 e2e_tests_payments:
   stage: test
-  image: mcr.microsoft.com/playwright/python:v1.57.0-jammy
+  image: mcr.microsoft.com/playwright/python:v1.58.0-jammy
   before_script:
     - pip install -r requirements.txt
   script:
-    - pytest e2e_tests/payments --junitxml=e2e-report.xml --headed --slowmo 500
+    - pytest e2e_tests/payments --headed --slowmo 500 --junitxml=e2e-report.xml
   when: manual
   allow_failure: false
   artifacts:
