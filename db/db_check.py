@@ -1,6 +1,6 @@
 import time
 from datetime import date
-from selectors.adminer_page import TEXT_FIELD, EXECUTE_BUTTON, TABLE
+from ui_selectors.adminer_page import TEXT_FIELD, EXECUTE_BUTTON, TABLE
 
 def is_user_pro(page, email:str) -> bool:
     query = f"""

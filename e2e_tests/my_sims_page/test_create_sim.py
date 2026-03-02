@@ -4,9 +4,9 @@ from playwright.sync_api import expect
 from fixtures.fixtures import name_generator
 from db.db_check import check_new_sim
 from api_methods.jwt import test_email, test_password
-from selectors.auth_page import LOGIN_EMAIL, LOGIN_PASSWORD, SUBMIT_BUTTON
-from selectors.navigation import MY_SIMS_BUTTON
-from selectors.my_sims_page import ADD_BUTTON, ADD_SIM_HEADER, FIRST_NAME_INPUT, LAST_NAME_INPUT, SAVE_BUTTON, PERSONS
+from ui_selectors.auth_page import LOGIN_EMAIL, LOGIN_PASSWORD, SUBMIT_BUTTON
+from ui_selectors.navigation import MY_SIMS_BUTTON
+from ui_selectors.my_sims_page import ADD_BUTTON, ADD_SIM_HEADER, FIRST_NAME_INPUT, LAST_NAME_INPUT, SAVE_BUTTON, PERSONS
 
 @allure.title('Successful sim creation')
 @allure.description('')

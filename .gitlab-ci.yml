@@ -1,14 +1,31 @@
 stages:
   - test
 
-api_tests:
+e2e_tests_payments:
   stage: test
   image: python:3.11
   before_script:
     - python -m pip install --upgrade pip
     - pip install -r requirements.txt
+    - playwright install --with-deps
   script:
-    - pytest e2e_tests/ --junitxml=api-report.xml
+    - pytest e2e_tests/payments --junitxml=e2e-report.xml
+  when: manual
+  allow_failure: false
+  artifacts:
+    when: always
+    reports:
+      junit: e2e-report.xml
+
+e2e_tests_my_sims_page:
+  stage: test
+  image: python:3.11
+  before_script:
+    - python -m pip install --upgrade pip
+    - pip install -r requirements.txt
+    - playwright install --with-deps
+  script:
+    - pytest e2e_tests/my_sims_page --junitxml=e2e-report.xml
   when: manual
   allow_failure: false
   artifacts:
