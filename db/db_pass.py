@@ -1,3 +1,0 @@
-USER='sim',
-PASSWORD='41VirDQIs5O1'
-DATABASE='sims_test'
